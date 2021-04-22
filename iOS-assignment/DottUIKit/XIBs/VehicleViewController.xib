@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehicleViewController" customModule="iOS_assignment" customModuleProvider="target">
             <connections>
+                <outlet property="qrCodeImgView" destination="cxD-0Z-xsp" id="isL-Mw-wPG"/>
+                <outlet property="topSeperatorColorView" destination="wAu-N7-ygt" id="YS5-lE-Gzp"/>
+                <outlet property="vehicleIdLbl" destination="OvZ-Es-vuT" id="1mx-YM-KBq"/>
                 <outlet property="view" destination="iN0-l3-epB" id="pv6-mn-NAS"/>
             </connections>
         </placeholder>
@@ -29,15 +32,19 @@
                                 <constraint firstAttribute="width" secondItem="EMI-hQ-0c3" secondAttribute="height" multiplier="1:1" id="dSl-lx-mRa"/>
                             </constraints>
                             <state key="normal" image="icon/cross"/>
+                            <connections>
+                                <action selector="closeVehicle:" destination="-1" eventType="touchUpInside" id="aQJ-ro-5Nk"/>
+                            </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Vehicle Identification Code&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvZ-Es-vuT" customClass="TitleLabel" customModule="iOS_assignment" customModuleProvider="target">
-                            <rect key="frame" x="95.5" y="16" width="223.5" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Vehicle Identification Code&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvZ-Es-vuT" customClass="TitleLabel" customModule="iOS_assignment" customModuleProvider="target">
+                            <rect key="frame" x="16" y="16" width="382" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cxD-0Z-xsp" customClass="DottImageView" customModule="iOS_assignment" customModuleProvider="target">
                             <rect key="frame" x="16" y="58" width="382" height="382"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="cxD-0Z-xsp" secondAttribute="height" multiplier="1:1" id="Cdg-8g-Qna"/>
                             </constraints>
@@ -46,12 +53,21 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="OvZ-Es-vuT" firstAttribute="centerX" secondItem="aym-FK-LOO" secondAttribute="centerX" id="49B-nX-wwK"/>
+                        <constraint firstAttribute="trailing" secondItem="OvZ-Es-vuT" secondAttribute="trailing" constant="16" id="Cuz-GF-UPw"/>
                         <constraint firstItem="OvZ-Es-vuT" firstAttribute="top" secondItem="aym-FK-LOO" secondAttribute="top" constant="16" id="Lrr-3T-2ff"/>
                         <constraint firstItem="EMI-hQ-0c3" firstAttribute="top" secondItem="aym-FK-LOO" secondAttribute="top" constant="16" id="OXR-jC-qyd"/>
                         <constraint firstItem="cxD-0Z-xsp" firstAttribute="top" secondItem="OvZ-Es-vuT" secondAttribute="bottom" constant="21" id="VhH-rV-HNR"/>
                         <constraint firstAttribute="trailing" secondItem="EMI-hQ-0c3" secondAttribute="trailing" constant="16" id="YnE-Uv-528"/>
                         <constraint firstAttribute="trailing" secondItem="cxD-0Z-xsp" secondAttribute="trailing" constant="16" id="bKd-tL-5kP"/>
                         <constraint firstItem="cxD-0Z-xsp" firstAttribute="leading" secondItem="aym-FK-LOO" secondAttribute="leading" constant="16" id="lkS-x9-gZ2"/>
+                        <constraint firstItem="OvZ-Es-vuT" firstAttribute="leading" secondItem="aym-FK-LOO" secondAttribute="leading" constant="16" id="oDh-PJ-BAF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAu-N7-ygt">
+                    <rect key="frame" x="0.0" y="44" width="414" height="4"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="VNy-VF-aWb"/>
                     </constraints>
                 </view>
             </subviews>
@@ -61,15 +77,21 @@
                 <constraint firstItem="aym-FK-LOO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="T5L-wG-4XM"/>
                 <constraint firstItem="aym-FK-LOO" firstAttribute="top" secondItem="VbP-TS-Bva" secondAttribute="top" id="T6R-Ah-RvI"/>
                 <constraint firstAttribute="trailing" secondItem="aym-FK-LOO" secondAttribute="trailing" id="Xyn-6Y-qOB"/>
+                <constraint firstItem="VbP-TS-Bva" firstAttribute="trailing" secondItem="wAu-N7-ygt" secondAttribute="trailing" id="i9R-4I-1OS"/>
                 <constraint firstItem="VbP-TS-Bva" firstAttribute="bottom" secondItem="aym-FK-LOO" secondAttribute="bottom" id="lgw-vP-nRW"/>
+                <constraint firstItem="wAu-N7-ygt" firstAttribute="leading" secondItem="VbP-TS-Bva" secondAttribute="leading" id="zH7-sO-ECr"/>
+                <constraint firstItem="VbP-TS-Bva" firstAttribute="top" secondItem="wAu-N7-ygt" secondAttribute="top" id="ze0-Uj-rMG"/>
             </constraints>
-            <point key="canvasLocation" x="274.63768115942031" y="65.290178571428569"/>
+            <point key="canvasLocation" x="273.91304347826087" y="64.955357142857139"/>
         </view>
     </objects>
     <resources>
         <image name="icon/cross" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

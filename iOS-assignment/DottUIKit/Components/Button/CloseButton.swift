@@ -13,5 +13,4 @@ class CloseButton: DottButton {
         setImage(DottImageAsset.Icon.cross.image, for: .normal)
         backgroundColor = DottColorAsset.closeButtonBackground.color
     }
-    
 }

@@ -10,8 +10,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehiclesViewController" customModule="iOS_assignment" customModuleProvider="target">
             <connections>
+                <outlet property="bottomCsrt" destination="g10-Qi-pnr" id="yT0-rg-bgK"/>
+                <outlet property="childFilterScreen" destination="NkO-93-sIZ" id="JNl-Hk-pcs"/>
+                <outlet property="filterBtn" destination="bPF-hr-LNT" id="MI7-9z-soG"/>
+                <outlet property="fleetOverviewLbl" destination="Sgw-LK-sJZ" id="tNj-m8-JnQ"/>
+                <outlet property="fleetTableView" destination="udw-CW-fQm" id="RbE-gf-E8H"/>
                 <outlet property="view" destination="Ve9-bd-BZk" id="HEf-yq-1lv"/>
             </connections>
         </placeholder>
@@ -39,6 +44,9 @@
                             <state key="highlighted">
                                 <color key="titleColor" name="whiteForegroundColor"/>
                             </state>
+                            <connections>
+                                <action selector="filter:" destination="-1" eventType="touchUpInside" id="TIN-VW-gty"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,6 +62,13 @@
                         <constraint firstAttribute="trailing" secondItem="Sgw-LK-sJZ" secondAttribute="trailing" constant="16" id="yOa-Mb-1Y7"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NkO-93-sIZ" userLabel="Child Filter Screen">
+                    <rect key="frame" x="0.0" y="396" width="414" height="500"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NkO-93-sIZ" secondAttribute="height" multiplier="414:413" constant="-87.210653753026634" id="o8d-8W-1NJ"/>
+                    </constraints>
+                </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brand/shapes/yellowArc" translatesAutoresizingMaskIntoConstraints="NO" id="MRH-UN-0zb">
                     <rect key="frame" x="294" y="0.0" width="120" height="116.5"/>
                     <constraints>
@@ -66,13 +81,16 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="MRH-UN-0zb" firstAttribute="top" secondItem="Ve9-bd-BZk" secondAttribute="top" id="Azo-aI-LlT"/>
+                <constraint firstItem="dob-0J-5Ta" firstAttribute="trailing" secondItem="NkO-93-sIZ" secondAttribute="trailing" id="RVw-Vj-JGr"/>
                 <constraint firstItem="LK0-dr-7zc" firstAttribute="leading" secondItem="dob-0J-5Ta" secondAttribute="leading" id="X8Q-Ct-yKu"/>
                 <constraint firstAttribute="trailing" secondItem="MRH-UN-0zb" secondAttribute="trailing" id="Xs8-V3-JmX"/>
                 <constraint firstItem="dob-0J-5Ta" firstAttribute="top" secondItem="LK0-dr-7zc" secondAttribute="top" id="cM6-9m-Dvg"/>
+                <constraint firstAttribute="bottom" secondItem="NkO-93-sIZ" secondAttribute="bottom" id="g10-Qi-pnr"/>
                 <constraint firstItem="dob-0J-5Ta" firstAttribute="trailing" secondItem="LK0-dr-7zc" secondAttribute="trailing" id="ogi-t1-0nc"/>
                 <constraint firstItem="LK0-dr-7zc" firstAttribute="bottom" secondItem="dob-0J-5Ta" secondAttribute="bottom" id="xwX-I8-wDL"/>
+                <constraint firstItem="NkO-93-sIZ" firstAttribute="leading" secondItem="dob-0J-5Ta" secondAttribute="leading" id="zpe-F9-18V"/>
             </constraints>
-            <point key="canvasLocation" x="-354" y="58"/>
+            <point key="canvasLocation" x="-355.07246376811599" y="57.589285714285708"/>
         </view>
     </objects>
     <resources>
@@ -85,6 +103,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

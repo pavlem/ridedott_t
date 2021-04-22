@@ -47,5 +47,7 @@
 		<string>GelionMedium.otf</string>
 		<string>GelionRegular.otf</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
